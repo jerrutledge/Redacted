@@ -1,5 +1,10 @@
 # Attribution
 ## Collaborators
+Dasil Adam
+Jane Scott
+Jeremy Rutledge
+Noah MacAulay
+Steve Howe
 
 ### Godot Game Template
 ![Maaack Plugin Icon](/assets/plugin_logo/logo.png)  
@@ -17,6 +22,10 @@ License: [CC BY 4.0 International](https://github.com/godotengine/godot/blob/mas
 Author: [Jason Long](https://bsky.app/profile/jasonlong.me)  
 Source: [git-scm.com : logos](https://git-scm.com/downloads/logos)  
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) 
+
+#### Paper Image
+Author: kues1 on Freepik
+Source: https://www.freepik.com/free-photo/paper-texture_1034617.htm
 
 ## Tools
 #### Godot
