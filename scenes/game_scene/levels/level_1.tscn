@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cqbany3bsiunw" path="res://assets/images/paper-texture.jpg" id="2_w6i3l"]
 [ext_resource type="Script" uid="uid://bll85ag2um7hl" path="res://scenes/game_scene/tutorial_manager.gd" id="4_bsimd"]
 [ext_resource type="PackedScene" uid="uid://ckymxmnq6px36" path="res://scenes/game_scene/letter_area.tscn" id="5_pmyid"]
-[ext_resource type="Script" uid="uid://cos3jsdfnx5bc" path="res://scenes/game_scene/letter_loader.gd" id="7_pmyid"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pmyid"]
 
@@ -72,8 +71,8 @@ text = "Select text, and press [space] to redact.
  - Management"
 
 [node name="LetterArea" parent="MarginContainer/HFlowContainer" unique_id=287803706 instance=ExtResource("5_pmyid")]
-custom_minimum_size = Vector2(425, 550)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HFlowContainer" unique_id=1272164429]
 layout_mode = 2
@@ -111,8 +110,5 @@ text = "Submit Redactions"
 [node name="TutorialManager" type="Node" parent="." unique_id=1907361952]
 unique_name_in_owner = true
 script = ExtResource("4_bsimd")
-
-[node name="LetterLoader" type="Node" parent="." unique_id=623017771]
-script = ExtResource("7_pmyid")
 
 [connection signal="pressed" from="MarginContainer/HFlowContainer/VBoxContainer/SubmitButton" to="." method="_on_submit_pressed"]

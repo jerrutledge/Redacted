@@ -3,12 +3,14 @@ extends Node
 @export var starting_index = 1
 
 
-
 func _ready() -> void:
 	if (starting_index == 1):
 		%LetterText.text = test1
 	else:
 		%LetterText.text = test2
+
+func evaluate_text() -> Array[int]:
+	return %LetterText.update_censoring(true)
 
 var test1:String = "My dear, Julia,
 

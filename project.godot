@@ -17,7 +17,9 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Management Agency for Spacetime Kernels"
 run/main_scene="res://scenes/opening/opening.tscn"
 config/features=PackedStringArray("4.6")
-config/icon="res://icon.png"
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/image="uid://cyp0t20xxp6ho"
+config/icon="uid://ctfl5lq83mmic"
 
 [autoload]
 

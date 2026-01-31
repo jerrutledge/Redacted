@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ckymxmnq6px36"]
 
+[ext_resource type="Script" uid="uid://cos3jsdfnx5bc" path="res://scenes/game_scene/letter_loader.gd" id="1_0ehl2"]
 [ext_resource type="Theme" uid="uid://b6cow4vci2cht" path="res://resources/themes/paper_theme.tres" id="1_5c0xl"]
 [ext_resource type="Texture2D" uid="uid://cqbany3bsiunw" path="res://assets/images/paper-texture.jpg" id="2_0ehl2"]
 [ext_resource type="Script" uid="uid://bm8rk6s8xiera" path="res://scenes/game_scene/text_redactor.gd" id="3_wmmct"]
@@ -7,6 +8,7 @@
 [node name="LetterArea" type="Control" unique_id=287803706]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_0ehl2")
 
 [node name="Page" type="TextureRect" parent="." unique_id=1155056630]
 custom_minimum_size = Vector2(425, 550)
