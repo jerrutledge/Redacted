@@ -17,6 +17,7 @@ func set_letter_text(new_text):
 	must_mask = []
 	text = new_text
 	remove_markings()
+	update_censoring()
 
 func remove_markings():
 	while text.contains("<") and text.contains(">"):
