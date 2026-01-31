@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c05d0dwtjjrtp"
+path="res://.godot/imported/Somber Piano Intro.ogg-c2e7521683898341a8b61aae793caabc.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Somber Piano Intro.ogg"
+dest_files=["res://.godot/imported/Somber Piano Intro.ogg-c2e7521683898341a8b61aae793caabc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

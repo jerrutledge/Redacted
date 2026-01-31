@@ -23,7 +23,6 @@ func open_tutorials() -> void:
 
 func _ready() -> void:
 	level_state = GameState.get_level_state(scene_file_path)
-	%ColorPickerButton.color = level_state.color
 	%BackgroundColor.color = level_state.color
 	if not level_state.tutorial_read:
 		open_tutorials()

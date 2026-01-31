@@ -1,12 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://da00hutaakwk6"]
+[gd_scene format=3 uid="uid://da00hutaakwk6"]
 
 [ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_623lg"]
-[ext_resource type="Script" uid="uid://1nf36h0gms3q" path="res://addons/maaacks_game_template/base/nodes/utilities/capture_focus.gd" id="2_sycfm"]
-[ext_resource type="Script" uid="uid://ch8aaykixbwn5" path="res://scenes/game_scene/input_display_label.gd" id="3_pmyid"]
+[ext_resource type="Script" uid="uid://bm8rk6s8xiera" path="res://scenes/game_scene/text_redactor.gd" id="2_2hhcp"]
 [ext_resource type="Script" uid="uid://bll85ag2um7hl" path="res://scenes/game_scene/tutorial_manager.gd" id="4_bsimd"]
-[ext_resource type="PackedScene" uid="uid://ks83y4cfd5a5" path="res://scenes/game_scene/tutorials/tutorial_1.tscn" id="5_fmabn"]
 
-[node name="Level1" type="Control"]
+[node name="Level1" type="Control" unique_id=2012722291]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,7 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_623lg")
 next_level_path = "res://scenes/game_scene/levels/level_2.tscn"
 
-[node name="BackgroundColor" type="ColorRect" parent="."]
+[node name="BackgroundColor" type="ColorRect" parent="." unique_id=1327206594]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -26,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=540110946]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,64 +36,18 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=222654261]
 layout_mode = 2
-theme_override_constants/separation = 16
+bbcode_enabled = true
+text = "Through A.N.C.H.O.R. our agents can send letters home to their loved ones in their original time. These letters provide our agents with emotional stability and temporal grounding. Most importantly, they create an anchor that helps protect agents from time-related anomalies - and they make us feel just swell.
+That’s where you come in. 
+As an A.N.C.H.O.R. agent, your responsibility is to ensure that only approved information appears in outgoing A.N.C.H.O.R. letters. We can’t very well let folks in the past know about major events in their future! History is fragile, and litigious.
+Each day, your manager will provide guidance on what to flag and what to mask. Your careful attention ensures the timeline remains stable, paradox-free, and pleasantly linear.
+In short: You’re helping save history. No pressure.
+Happy masking, agent!
+"
+script = ExtResource("2_2hhcp")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Example Level #1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 32
-script = ExtResource("2_sycfm")
-
-[node name="LoseButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Lose"
-
-[node name="WinButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Win"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="TutorialButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Tutorial"
-
-[node name="InputDisplayLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-horizontal_alignment = 1
-script = ExtResource("3_pmyid")
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Change Level Color: "
-
-[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Change Color"
-
-[node name="TutorialManager" type="Node" parent="."]
+[node name="TutorialManager" type="Node" parent="." unique_id=1907361952]
 unique_name_in_owner = true
 script = ExtResource("4_bsimd")
-tutorial_scenes = Array[PackedScene]([ExtResource("5_fmabn")])
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/LoseButton" to="." method="_on_lose_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/WinButton" to="." method="_on_win_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/TutorialButton" to="." method="_on_tutorial_button_pressed"]
-[connection signal="color_changed" from="MarginContainer/VBoxContainer/HBoxContainer2/ColorPickerButton" to="." method="_on_color_picker_button_color_changed"]
