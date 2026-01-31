@@ -2,10 +2,18 @@ extends RichTextLabel
 class_name CensorableRichTextLabel
 
 var censored:Array[Vector2i] = []
+var must_mask:Array[Vector2i] = []
+
 func _ready() -> void:
 	bbcode_enabled = true
 	selection_enabled = true
 	scroll_active = true
+	while text.contains("<"):
+		var sel = Vector2i(text.find("<"), text.find(">") - 1)
+		var newtext = text.substr(0, sel.x) 
+		newtext += text.substr(sel.x + 1, sel.y - sel.x)
+		newtext += text.substr(sel.y + 2)
+		text = newtext
 
 var last_text:String = ""
 func _process(_delta: float) -> void:
@@ -30,3 +38,6 @@ func update_censoring():
 			pop_all()
 		else:
 			add_text(text[p])
+
+func reveal_censoring():
+	pass

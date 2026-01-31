@@ -88,14 +88,11 @@ grow_vertical = 2
 layout_mode = 2
 focus_mode = 2
 bbcode_enabled = true
-text = "Greetings!!
+text = "My dear, Julia,
 
-Through A.N.C.H.O.R. our agents can send letters home to their loved ones in their original time. These letters create an anchor that helps protect agents from time-related anomalies - and they make us feel just swell.
-That’s where you come in. 
-As an A.N.C.H.O.R. agent, your responsibility is to ensure that only approved information appears in outgoing A.N.C.H.O.R. letters. We can’t very well let folks in the past know about major events in their future! History is fragile, and litigious.
-Your careful attention ensures the timeline remains stable, paradox-free, and pleasantly linear. In short: You’re helping save history. No pressure.
+I had a butter tart and thought of you. The ones here don’t hold a candle to yours, all warm and soft. Perhaps if I pop it in the <microwave>, it might hope to compete. 
 
-Happy masking, agent!
+All my love, A.
 "
 selection_enabled = true
 drag_and_drop_selection_enabled = false
