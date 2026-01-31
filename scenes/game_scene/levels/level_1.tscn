@@ -70,6 +70,7 @@ text = "Select text, and press [space] to redact.
  - Management"
 
 [node name="LetterArea" parent="MarginContainer/HFlowContainer" unique_id=287803706 instance=ExtResource("5_pmyid")]
+custom_minimum_size = Vector2(425, 550)
 layout_mode = 2
 
 [node name="Button" type="Button" parent="MarginContainer/HFlowContainer" unique_id=416467963]

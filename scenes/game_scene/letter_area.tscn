@@ -10,9 +10,8 @@ anchors_preset = 0
 
 [node name="Page" type="TextureRect" parent="." unique_id=1155056630]
 custom_minimum_size = Vector2(425, 550)
-layout_mode = 0
-offset_left = 263.0
-offset_right = 688.0
+layout_mode = 1
+offset_right = 425.0
 offset_bottom = 550.0
 theme = ExtResource("1_5c0xl")
 texture = ExtResource("2_0ehl2")
