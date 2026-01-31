@@ -331,29 +331,26 @@ tree_root = SubResource("AnimationNodeStateMachine_vikuh")
 anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
 
-[node name="BackgroundMusicPlayer" parent="." index="3"]
+[node name="BackgroundMusicPlayer" parent="." index="3" unique_id=355373720]
 stream = ExtResource("5_2k5l7")
 
-[node name="BackgroundTextureRect" parent="." index="4"]
+[node name="BackgroundTextureRect" parent="." index="4" unique_id=1631569601]
 texture = ExtResource("5_ixa71")
 stretch_mode = 6
 
-[node name="TitleContainer" parent="MenuContainer/TitleMargin" index="0"]
+[node name="TitleContainer" parent="MenuContainer/TitleMargin" parent_id_path=PackedInt32Array(1724862436) index="0" unique_id=411024928]
 modulate = Color(1, 1, 1, 0)
 
-[node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0"]
-text = "Management Agency for Spacetime Kernels"
-
-[node name="SubTitleContainer" parent="MenuContainer/SubTitleMargin" index="0"]
+[node name="SubTitleContainer" parent="MenuContainer/SubTitleMargin" parent_id_path=PackedInt32Array(178786598) index="0" unique_id=603560830]
 modulate = Color(1, 1, 1, 0)
 
-[node name="SubTitleLabel" parent="MenuContainer/SubTitleMargin/SubTitleContainer" index="0"]
+[node name="SubTitleLabel" parent="MenuContainer/SubTitleMargin/SubTitleContainer" index="0" unique_id=1597473896]
 text = "A Game about what gets through. "
 
-[node name="MenuButtonsContainer" parent="MenuContainer/MenuButtonsMargin" index="0"]
+[node name="MenuButtonsContainer" parent="MenuContainer/MenuButtonsMargin" parent_id_path=PackedInt32Array(1671710268) index="0" unique_id=1558976330]
 modulate = Color(1, 1, 1, 0)
 
-[node name="MenuButtonsBoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="0"]
+[node name="MenuButtonsBoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="0" unique_id=1633319056]
 lock = true
 
 [node name="ContinueGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="1" unique_id=218893629]
@@ -368,7 +365,7 @@ visible = false
 layout_mode = 2
 text = "Level Select"
 
-[node name="VersionContainer" parent="VersionMargin" index="0"]
+[node name="VersionContainer" parent="VersionMargin" parent_id_path=PackedInt32Array(1842275612) index="0" unique_id=1750981097]
 modulate = Color(1, 1, 1, 0)
 
 [node name="NewGameConfirmation" parent="." index="7" unique_id=197177393 instance=ExtResource("5_6xh1d")]
