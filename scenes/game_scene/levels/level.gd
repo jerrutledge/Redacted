@@ -43,7 +43,7 @@ func _on_submit_pressed() -> void:
 		button_state = "next"
 		%SubmitButton.text = "Next Level"
 	else:
-		
+		%LetterArea.next_level()
 		%SubmitButton.text = "Submit Redactions"
 		button_state = "submit"
 		pass
