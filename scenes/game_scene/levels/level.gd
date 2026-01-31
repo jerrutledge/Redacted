@@ -12,6 +12,7 @@ signal update_score(score_array: String)
 var level_state : LevelState
 var level_time = 0
 var MAX_TIME = 5 * 60  # 30 minutes in seconds
+var button_state = "submit"
 
 func _on_lose_button_pressed() -> void:
 	level_lost.emit()
@@ -36,8 +37,16 @@ func _on_tutorial_button_pressed() -> void:
 
 func _on_submit_pressed() -> void:
 	# TODO: do something with win/loss
-	var scores = %LetterArea.evaluate_text()
-	update_score.emit(scores)
+	if button_state == "submit":
+		var scores = %LetterArea.evaluate_text()
+		update_score.emit(scores)
+		button_state = "next"
+		%SubmitButton.text = "Next Level"
+	else:
+		
+		%SubmitButton.text = "Submit Redactions"
+		button_state = "submit"
+		pass
 
 func _on_timer_timeout() -> void:
 	level_time -= 1  # Decrement instead of increment
