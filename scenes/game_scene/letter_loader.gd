@@ -5,9 +5,9 @@ extends Node
 
 func _ready() -> void:
 	if (starting_index == 1):
-		%LetterText.text = test1
+		%LetterText.set_letter_text(test1)
 	else:
-		%LetterText.text = test2
+		%LetterText.set_letter_text(test2)
 
 func evaluate_text() -> Array[int]:
 	return %LetterText.update_censoring(true)
