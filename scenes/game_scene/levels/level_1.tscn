@@ -70,7 +70,9 @@ theme_override_constants/margin_bottom = 32
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HFlowContainer/TextureRect/MarginContainer" unique_id=1604754526]
 layout_mode = 2
 bbcode_enabled = true
-text = "Remove references to our program in this letter. -Management"
+text = "Select text, and press [space] to redact.
+
+ - Management"
 
 [node name="Page" type="TextureRect" parent="MarginContainer/HFlowContainer" unique_id=1915620582]
 custom_minimum_size = Vector2(425, 550)
