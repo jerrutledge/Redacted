@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://da00hutaakwk6"]
+[gd_scene format=3 uid="uid://bawmep6x30wxo"]
 
-[ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_623lg"]
-[ext_resource type="Script" uid="uid://bm8rk6s8xiera" path="res://scenes/game_scene/text_redactor.gd" id="2_2hhcp"]
-[ext_resource type="Theme" uid="uid://b6cow4vci2cht" path="res://resources/themes/paper_theme.tres" id="2_623lg"]
-[ext_resource type="Texture2D" uid="uid://lvk5b4sukm6u" path="res://assets/images/brown-wooden-floor.jpg" id="2_sycfm"]
-[ext_resource type="Texture2D" uid="uid://cqbany3bsiunw" path="res://assets/images/paper-texture.jpg" id="2_w6i3l"]
-[ext_resource type="Script" uid="uid://bll85ag2um7hl" path="res://scenes/game_scene/tutorial_manager.gd" id="4_bsimd"]
-[ext_resource type="Script" uid="uid://cos3jsdfnx5bc" path="res://scenes/game_scene/letter_loader.gd" id="7_pmyid"]
+[ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_msx52"]
+[ext_resource type="Texture2D" uid="uid://lvk5b4sukm6u" path="res://assets/images/brown-wooden-floor.jpg" id="2_uxkk5"]
+[ext_resource type="Theme" uid="uid://b6cow4vci2cht" path="res://resources/themes/paper_theme.tres" id="3_cd30t"]
+[ext_resource type="Texture2D" uid="uid://cqbany3bsiunw" path="res://assets/images/paper-texture.jpg" id="4_7d2vs"]
+[ext_resource type="Script" uid="uid://bm8rk6s8xiera" path="res://scenes/game_scene/text_redactor.gd" id="5_4jsph"]
+[ext_resource type="Script" uid="uid://bll85ag2um7hl" path="res://scenes/game_scene/tutorial_manager.gd" id="6_nkl74"]
+[ext_resource type="Script" uid="uid://cos3jsdfnx5bc" path="res://scenes/game_scene/letter_loader.gd" id="7_uxkk5"]
 
 [node name="Level1" type="Control" unique_id=2012722291]
 layout_mode = 3
@@ -15,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_623lg")
+script = ExtResource("1_msx52")
 next_level_path = "res://scenes/game_scene/levels/level_2.tscn"
 
 [node name="BackgroundTexture" type="TextureRect" parent="." unique_id=1626174201]
@@ -26,7 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_sycfm")
+texture = ExtResource("2_uxkk5")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=540110946]
 layout_mode = 1
@@ -49,8 +49,8 @@ custom_minimum_size = Vector2(215, 215)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("2_623lg")
-texture = ExtResource("2_w6i3l")
+theme = ExtResource("3_cd30t")
+texture = ExtResource("4_7d2vs")
 expand_mode = 1
 stretch_mode = 1
 
@@ -72,8 +72,8 @@ text = "Select text, and press [space] to redact.
 [node name="Page" type="TextureRect" parent="MarginContainer/HFlowContainer" unique_id=1915620582]
 custom_minimum_size = Vector2(425, 550)
 layout_mode = 2
-theme = ExtResource("2_623lg")
-texture = ExtResource("2_w6i3l")
+theme = ExtResource("3_cd30t")
+texture = ExtResource("4_7d2vs")
 expand_mode = 1
 stretch_mode = 1
 
@@ -98,7 +98,7 @@ All my love, A.
 "
 selection_enabled = true
 drag_and_drop_selection_enabled = false
-script = ExtResource("2_2hhcp")
+script = ExtResource("5_4jsph")
 
 [node name="Button" type="Button" parent="MarginContainer/HFlowContainer" unique_id=416467963]
 layout_mode = 2
@@ -108,10 +108,11 @@ text = "Submit Redactions"
 
 [node name="TutorialManager" type="Node" parent="." unique_id=1907361952]
 unique_name_in_owner = true
-script = ExtResource("4_bsimd")
+script = ExtResource("6_nkl74")
+auto_open_delay = 0.99
 
-[node name="LetterLoader" type="Node" parent="." unique_id=623017771]
-script = ExtResource("7_pmyid")
-lala = 2
+[node name="LetterLoader" type="Node" parent="." unique_id=116127628]
+unique_name_in_owner = true
+script = ExtResource("7_uxkk5")
 
 [connection signal="pressed" from="MarginContainer/HFlowContainer/Button" to="." method="_on_button_pressed"]
