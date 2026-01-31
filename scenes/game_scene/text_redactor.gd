@@ -11,8 +11,8 @@ func _ready() -> void:
 	while text.contains("<"):
 		var sel = Vector2i(text.find("<"), text.find(">") - 2)
 		var newtext = text.substr(0, sel.x) 
-		newtext += text.substr(sel.x + 1, sel.y - sel.x)
-		newtext += text.substr(sel.y + 2)
+		newtext += text.substr(sel.x + 1, sel.y - sel.x+1)
+		newtext += text.substr(sel.y + 3)
 		text = newtext
 		must_mask.append(sel)
 
