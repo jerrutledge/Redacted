@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cqbany3bsiunw" path="res://assets/images/paper-texture.jpg" id="2_w6i3l"]
 [ext_resource type="Script" uid="uid://bll85ag2um7hl" path="res://scenes/game_scene/tutorial_manager.gd" id="4_bsimd"]
 [ext_resource type="PackedScene" uid="uid://ckymxmnq6px36" path="res://scenes/game_scene/letter_area.tscn" id="5_pmyid"]
-[ext_resource type="Script" path="res://scenes/game_scene/letter_loader.gd" id="7_pmyid"]
+[ext_resource type="Script" uid="uid://cos3jsdfnx5bc" path="res://scenes/game_scene/letter_loader.gd" id="7_pmyid"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pmyid"]
 
 [node name="Level1" type="Control" unique_id=2012722291]
 layout_mode = 3
@@ -73,7 +75,34 @@ text = "Select text, and press [space] to redact.
 custom_minimum_size = Vector2(425, 550)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/HFlowContainer" unique_id=416467963]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HFlowContainer" unique_id=1272164429]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="Timer" type="Control" parent="MarginContainer/HFlowContainer/VBoxContainer" unique_id=439757899]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HFlowContainer/VBoxContainer/Timer" unique_id=2143956943]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_pmyid")
+
+[node name="Score" type="RichTextLabel" parent="MarginContainer/HFlowContainer/VBoxContainer" unique_id=998549609]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Score: 0"
+
+[node name="ResetButton" type="Button" parent="MarginContainer/HFlowContainer/VBoxContainer" unique_id=1525562633]
+layout_mode = 2
+text = "Start Over"
+
+[node name="SubmitButton" type="Button" parent="MarginContainer/HFlowContainer/VBoxContainer" unique_id=416467963]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
@@ -86,4 +115,4 @@ script = ExtResource("4_bsimd")
 [node name="LetterLoader" type="Node" parent="." unique_id=623017771]
 script = ExtResource("7_pmyid")
 
-[connection signal="pressed" from="MarginContainer/HFlowContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HFlowContainer/VBoxContainer/SubmitButton" to="." method="_on_submit_pressed"]
