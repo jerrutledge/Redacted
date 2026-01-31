@@ -9,7 +9,7 @@ func _ready() -> void:
 	selection_enabled = true
 	scroll_active = true
 	while text.contains("<"):
-		var sel = Vector2i(text.find("<"), text.find(">") - 1)
+		var sel = Vector2i(text.find("<"), text.find(">") - 2)
 		var newtext = text.substr(0, sel.x) 
 		newtext += text.substr(sel.x + 1, sel.y - sel.x)
 		newtext += text.substr(sel.y + 2)
