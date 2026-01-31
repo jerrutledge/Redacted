@@ -14,6 +14,7 @@ func _ready() -> void:
 		newtext += text.substr(sel.x + 1, sel.y - sel.x)
 		newtext += text.substr(sel.y + 2)
 		text = newtext
+		must_mask.append(sel)
 
 var last_text:String = ""
 func _process(_delta: float) -> void:
@@ -25,19 +26,29 @@ func _process(_delta: float) -> void:
 		last_text = text
 		update_censoring()
 
-func update_censoring():
+func update_censoring(reveal = false):
+	var has_mistake = false
 	var all_censored_characters:Array[int] = []
+	var all_unmasked_characters:Array[int] = []
 	for p in censored:
 		for o in range(p.x, p.y + 1): ## Needs the +1 to get the next letter
 			all_censored_characters.push_back(o)
+	if reveal:
+		for p in must_mask:
+			for o in range(p.x, p.y + 1): ## Needs the +1 to get the next letter
+				if o not in all_censored_characters:
+					all_unmasked_characters.push_back(o)
 	clear()
 	for p in text.length():
 		if all_censored_characters.has(p):
 			push_fgcolor(Color.BLACK)
 			add_text(text[p])
 			pop_all()
+		elif all_unmasked_characters.has(p):
+			push_fgcolor(Color.RED)
+			add_text(text[p])
+			pop_all()
+			has_mistake = true
 		else:
 			add_text(text[p])
-
-func reveal_censoring():
-	pass
+	return has_mistake

@@ -28,3 +28,8 @@ func _ready() -> void:
 
 func _on_tutorial_button_pressed() -> void:
 	open_tutorials()
+
+
+func _on_button_pressed() -> void:
+	var has_mistakes = %LetterText.update_censoring(true)
+	# TODO: do something with win/loss
