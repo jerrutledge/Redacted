@@ -13,7 +13,7 @@ size_flags_vertical = 3
 script = ExtResource("1_0ehl2")
 
 [node name="Page" type="TextureRect" parent="." unique_id=1155056630]
-custom_minimum_size = Vector2(425, 550)
+custom_minimum_size = Vector2(612, 792)
 layout_mode = 1
 offset_right = 425.0
 offset_bottom = 550.0
