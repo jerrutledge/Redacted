@@ -7,8 +7,6 @@
 [ext_resource type="Script" uid="uid://bll85ag2um7hl" path="res://scenes/game_scene/tutorial_manager.gd" id="4_bsimd"]
 [ext_resource type="PackedScene" uid="uid://ckymxmnq6px36" path="res://scenes/game_scene/letter_area.tscn" id="5_pmyid"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pmyid"]
-
 [node name="Level1" type="Control" unique_id=2012722291]
 layout_mode = 3
 anchors_preset = 15
@@ -83,21 +81,15 @@ alignment = 2
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HFlowContainer/VBoxContainer/Timer" unique_id=2143956943]
+[node name="TimerLabel" type="Label" parent="MarginContainer/HFlowContainer/VBoxContainer/Timer" unique_id=838349470]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_pmyid")
-
-[node name="TimerLabel" type="Label" parent="MarginContainer/HFlowContainer/VBoxContainer/Timer" unique_id=838349470]
-layout_mode = 0
-offset_right = 232.0
-offset_bottom = 64.0
-theme_override_colors/font_color = Color(0.19607843, 0.6627451, 0.16078432, 1)
 theme_override_font_sizes/font_size = 32
+text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
