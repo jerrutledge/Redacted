@@ -25,7 +25,11 @@ License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
 #### Paper Image
 Author: kues1 on Freepik
-Source: https://www.freepik.com/free-photo/paper-texture_1034617.htm
+Source: [freepik.com](https://www.freepik.com/free-photo/paper-texture_1034617.htm)
+
+#### Wood Texture
+Author: rawpixel.com on Freepik
+Source: [freepik.com](https://www.freepik.com/free-photo/brown-wooden-floor_4246301.htm)
 
 ## Tools
 #### Godot
