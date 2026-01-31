@@ -4,6 +4,12 @@
 [ext_resource type="Script" uid="uid://bm8rk6s8xiera" path="res://scenes/game_scene/text_redactor.gd" id="2_2hhcp"]
 [ext_resource type="Script" uid="uid://bll85ag2um7hl" path="res://scenes/game_scene/tutorial_manager.gd" id="4_bsimd"]
 
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_y0mvw"]
+width = 215
+height = 215
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_w6i3l"]
+
 [node name="Level1" type="Control" unique_id=2012722291]
 layout_mode = 3
 anchors_preset = 15
@@ -36,17 +42,75 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=222654261]
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer" unique_id=1577329111]
+layout_mode = 2
+theme_override_constants/h_separation = 48
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HFlowContainer" unique_id=1323564316]
+custom_minimum_size = Vector2(215, 215)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("NoiseTexture2D_y0mvw")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HFlowContainer/TextureRect" unique_id=1447345645]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HFlowContainer/TextureRect/MarginContainer" unique_id=1604754526]
 layout_mode = 2
 bbcode_enabled = true
-text = "Through A.N.C.H.O.R. our agents can send letters home to their loved ones in their original time. These letters provide our agents with emotional stability and temporal grounding. Most importantly, they create an anchor that helps protect agents from time-related anomalies - and they make us feel just swell.
+text = "Remove references to our program in this letter. -Management"
+
+[node name="Page" type="TextureRect" parent="MarginContainer/HFlowContainer" unique_id=1915620582]
+custom_minimum_size = Vector2(425, 550)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_w6i3l")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HFlowContainer/Page" unique_id=282750801]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HFlowContainer/Page/MarginContainer" unique_id=222654261]
+layout_mode = 2
+focus_mode = 2
+bbcode_enabled = true
+text = "Greetings!!
+
+Through A.N.C.H.O.R. our agents can send letters home to their loved ones in their original time. These letters create an anchor that helps protect agents from time-related anomalies - and they make us feel just swell.
 That’s where you come in. 
 As an A.N.C.H.O.R. agent, your responsibility is to ensure that only approved information appears in outgoing A.N.C.H.O.R. letters. We can’t very well let folks in the past know about major events in their future! History is fragile, and litigious.
-Each day, your manager will provide guidance on what to flag and what to mask. Your careful attention ensures the timeline remains stable, paradox-free, and pleasantly linear.
-In short: You’re helping save history. No pressure.
+Your careful attention ensures the timeline remains stable, paradox-free, and pleasantly linear. In short: You’re helping save history. No pressure.
+
 Happy masking, agent!
 "
+selection_enabled = true
+drag_and_drop_selection_enabled = false
 script = ExtResource("2_2hhcp")
+
+[node name="Button" type="Button" parent="MarginContainer/HFlowContainer" unique_id=416467963]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Submit Redactions ⮕"
 
 [node name="TutorialManager" type="Node" parent="." unique_id=1907361952]
 unique_name_in_owner = true
