@@ -10,6 +10,15 @@ func _ready() -> void:
 	bbcode_enabled = true
 	selection_enabled = true
 	scroll_active = true
+	remove_markings()
+
+func set_letter_text(new_text):
+	censored = []
+	must_mask = []
+	text = new_text
+	remove_markings()
+
+func remove_markings():
 	while text.contains("<") and text.contains(">"):
 		var sel = Vector2i(text.find("<"), text.find(">") - 2)
 		var newtext = text.substr(0, sel.x)
