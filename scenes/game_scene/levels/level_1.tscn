@@ -15,7 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_623lg")
-next_level_path = "res://scenes/game_scene/levels/level_2.tscn"
+next_level_path = "uid://yvhvsxbglewu"
 
 [node name="BackgroundTexture" type="TextureRect" parent="." unique_id=1626174201]
 unique_name_in_owner = true

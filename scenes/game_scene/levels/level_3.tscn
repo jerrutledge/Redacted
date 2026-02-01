@@ -1,21 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://rpyqx1valdin"]
+[gd_scene format=3 uid="uid://bctmqa4f18cf7"]
 
-[ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_3s8h5"]
-[ext_resource type="Script" uid="uid://1nf36h0gms3q" path="res://addons/maaacks_game_template/base/nodes/utilities/capture_focus.gd" id="2_satlj"]
-[ext_resource type="Script" uid="uid://ch8aaykixbwn5" path="res://scenes/game_scene/input_display_label.gd" id="3_4popk"]
-[ext_resource type="Script" uid="uid://bll85ag2um7hl" path="res://scenes/game_scene/tutorial_manager.gd" id="4_mdq82"]
-[ext_resource type="PackedScene" uid="uid://b444n7xu3j48v" path="res://scenes/game_scene/tutorials/tutorial_3.tscn" id="5_32y40"]
+[ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_satlj"]
+[ext_resource type="Texture2D" uid="uid://lvk5b4sukm6u" path="res://assets/images/brown-wooden-floor.jpg" id="2_4popk"]
+[ext_resource type="Theme" uid="uid://b6cow4vci2cht" path="res://resources/themes/paper_theme.tres" id="3_mdq82"]
+[ext_resource type="Texture2D" uid="uid://cqbany3bsiunw" path="res://assets/images/paper-texture.jpg" id="4_32y40"]
+[ext_resource type="PackedScene" uid="uid://ckymxmnq6px36" path="res://scenes/game_scene/letter_area.tscn" id="5_y7sfu"]
+[ext_resource type="Script" uid="uid://bll85ag2um7hl" path="res://scenes/game_scene/tutorial_manager.gd" id="6_so5mi"]
 
-[node name="Level3" type="Control"]
+[node name="Level3" type="Control" unique_id=2012722291]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_3s8h5")
+script = ExtResource("1_satlj")
+next_level_path = "uid://yvhvsxbglewu"
 
-[node name="BackgroundColor" type="ColorRect" parent="."]
+[node name="BackgroundTexture" type="TextureRect" parent="." unique_id=1626174201]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -23,9 +25,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("2_4popk")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=540110946]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,76 +39,81 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer" unique_id=1577329111]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/h_separation = 48
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HFlowContainer" unique_id=1323564316]
+custom_minimum_size = Vector2(215, 215)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("3_mdq82")
+texture = ExtResource("4_32y40")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HFlowContainer/TextureRect" unique_id=1447345645]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HFlowContainer/TextureRect/MarginContainer" unique_id=1604754526]
+layout_mode = 2
+bbcode_enabled = true
+text = "Select text, and press [space] to redact.
+
+ - Management"
+
+[node name="LetterArea" parent="MarginContainer/HFlowContainer" unique_id=287803706 instance=ExtResource("5_y7sfu")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HFlowContainer" unique_id=1272164429]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="Timer" type="Control" parent="MarginContainer/HFlowContainer/VBoxContainer" unique_id=439757899]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="TimerLabel" type="Label" parent="MarginContainer/HFlowContainer/VBoxContainer/Timer" unique_id=838349470]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "Example Level #3"
+text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="Score" type="RichTextLabel" parent="MarginContainer/HFlowContainer/VBoxContainer" unique_id=998549609]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = 32
-script = ExtResource("2_satlj")
+text = "Score: 0"
 
-[node name="WinButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ResetButton" type="Button" parent="MarginContainer/HFlowContainer/VBoxContainer" unique_id=1525562633]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Win"
+text = "Start Over"
 
-[node name="LoseButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Lose"
-
-[node name="LoseButton2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Lose"
-
-[node name="LoseButton3" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Lose"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="TutorialButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Tutorial"
-
-[node name="InputDisplayLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-horizontal_alignment = 1
-script = ExtResource("3_4popk")
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Change Level Color: "
-
-[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="SubmitButton" type="Button" parent="MarginContainer/HFlowContainer/VBoxContainer" unique_id=416467963]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Change Color"
+text = "Submit Redactions"
 
-[node name="TutorialManager" type="Node" parent="."]
+[node name="TutorialManager" type="Node" parent="." unique_id=1907361952]
 unique_name_in_owner = true
-script = ExtResource("4_mdq82")
-tutorial_scenes = Array[PackedScene]([ExtResource("5_32y40")])
+script = ExtResource("6_so5mi")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/WinButton" to="." method="_on_win_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/LoseButton" to="." method="_on_lose_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/LoseButton2" to="." method="_on_lose_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/LoseButton3" to="." method="_on_lose_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/TutorialButton" to="." method="_on_tutorial_button_pressed"]
-[connection signal="color_changed" from="MarginContainer/VBoxContainer/HBoxContainer2/ColorPickerButton" to="." method="_on_color_picker_button_color_changed"]
+[node name="Timer" type="Timer" parent="." unique_id=56370868]
+
+[connection signal="pressed" from="MarginContainer/HFlowContainer/VBoxContainer/SubmitButton" to="." method="_on_submit_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
