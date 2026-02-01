@@ -7,6 +7,7 @@ signal opened
 
 @export var ui_cancel_closes : bool = true
 
+@export var window_icon: Texture = null
 @export_group("Content")
 @export var update_content : bool = false
 @export_multiline var text : String :
@@ -54,6 +55,9 @@ func _ready() -> void:
 	title = title
 	title_font_size = title_font_size
 	title_visible = title_visible
+	if window_icon != null:
+		%WindowIcon.texture = window_icon
+		%WindowIcon.visible = true
 
 func close() -> void:
 	if not visible: return
