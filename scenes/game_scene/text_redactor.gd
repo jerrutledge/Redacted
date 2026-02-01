@@ -37,6 +37,7 @@ func remove_markings():
 				newtext += text.substr(end_idx+1)
 				text = newtext
 				must_mask.append(Vector2i(start_idx, end_idx-2))
+				i -= 2
 			elif text[start_idx] == '{':
 				while (text[i] != '}' and i < text.length()):
 					i += 1
@@ -46,6 +47,7 @@ func remove_markings():
 				newtext += text.substr(end_idx+1)
 				text = newtext
 				ok_to_mask.append(Vector2i(start_idx, end_idx-2))
+				i -= 2
 		else:
 			i += 1
 		if (i >= text.length()):
