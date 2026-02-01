@@ -10,6 +10,7 @@ update_content = true
 text = "Good morning, agent! Are you ready for another day of protecting the sanctity of the timeline?
 
 Since it’s your first day at the Management Agency for Spacetime Kernels - M.A.S.K., as we like to call it - I’m here to train you. But after that, you’re on your own, kapeesh?."
+close_button_text = "Oh, OK."
 title = "Management"
 title_font_size = 20
 
@@ -20,3 +21,6 @@ theme_override_font_sizes/font_size = 20
 text = "Good morning, agent! Are you ready for another day of protecting the sanctity of the timeline?
 
 Since it’s your first day at the Management Agency for Spacetime Kernels - M.A.S.K., as we like to call it - I’m here to train you. But after that, you’re on your own, kapeesh?."
+
+[node name="CloseButton" parent="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons" parent_id_path=PackedInt32Array(702067329) index="0" unique_id=1696554714]
+text = "Oh, OK."
