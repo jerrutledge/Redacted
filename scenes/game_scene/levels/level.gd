@@ -9,7 +9,7 @@ signal level_changed(level_path : String)
 
 var level_state : LevelState
 var level_time = 0
-var MAX_TIME = 5 * 60  # 30 minutes in seconds
+var MAX_TIME = 5 * 60  # 5 minutes in seconds
 var button_state = "submit"
 
 func _on_lose_button_pressed() -> void:
@@ -18,6 +18,26 @@ func _on_lose_button_pressed() -> void:
 func _on_win_button_pressed() -> void:
 	level_won.emit(next_level_path)
 
+func handle_level_change(next_level_path: String):
+	if scene_file_path.contains("level_3"):
+		print("on third level`")
+		show_completion_message()
+		go_to_main_screen()
+	else:
+		level_won.emit(next_level_path)
+
+func show_completion_message() -> void:
+	# Create and display a completion message
+	var dialog = AcceptDialog.new()
+	dialog.title = "Congratulations!"
+	dialog.dialog_text = "You have completed all levels!"
+	add_child(dialog)
+	dialog.popup_centered_ratio(0.5)
+	
+func go_to_main_screen() -> void:
+	# Navigate to main screen (adjust the path based on your project structure)
+	get_tree().change_scene_to_file("res://scenes/menus/main_menu/main_menu.tscn")
+	
 func open_tutorials() -> void:
 	%TutorialManager.open_tutorials()
 	level_state.tutorial_read = true
@@ -46,7 +66,8 @@ func _on_submit_pressed() -> void:
 	else:
 		end_level = %LetterArea.next_level()
 		if end_level:
-			level_won.emit(next_level_path)
+			handle_level_change(next_level_path)
+			#level_won.emit(next_level_path)
 		%SubmitButton.text = "SEND"
 		button_state = "submit"
 
