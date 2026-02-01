@@ -43,7 +43,12 @@ theme_override_constants/margin_bottom = 32
 layout_mode = 2
 theme_override_constants/h_separation = 48
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HFlowContainer" unique_id=1323564316]
+[node name="ManagementNotes" type="VBoxContainer" parent="MarginContainer/HFlowContainer" unique_id=1793646061]
+custom_minimum_size = Vector2(0, 850)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HFlowContainer/ManagementNotes" unique_id=1323564316]
 custom_minimum_size = Vector2(215, 215)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -53,20 +58,65 @@ texture = ExtResource("2_w6i3l")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HFlowContainer/TextureRect" unique_id=1447345645]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HFlowContainer/ManagementNotes/TextureRect" unique_id=1447345645]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HFlowContainer/TextureRect/MarginContainer" unique_id=1604754526]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HFlowContainer/ManagementNotes/TextureRect/MarginContainer" unique_id=1604754526]
 layout_mode = 2
 bbcode_enabled = true
 text = "Select text, and press [space] to redact.
 
  - Management"
+
+[node name="LevelText" type="TextureRect" parent="MarginContainer/HFlowContainer/ManagementNotes" unique_id=1943632887]
+custom_minimum_size = Vector2(215, 215)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("2_623lg")
+texture = ExtResource("2_w6i3l")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HFlowContainer/ManagementNotes/LevelText" unique_id=13352045]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HFlowContainer/ManagementNotes/LevelText/MarginContainer" unique_id=495709777]
+layout_mode = 2
+bbcode_enabled = true
+text = "[u]GUIDELINES:[/u]
+
+No mention of [b]inventions[/b] created after [b]1820[/b]. A list of examples has been provided below:
+
+-Trains
+-Bicycles
+-Jazz music
+-Safety Pins
+-Motion pictures
+-Feminism
+-Cocktails
+-Cole Porter Musicals (Anything Goes, etc.)
+
+Happy masking! - Management
+"
 
 [node name="LetterArea" parent="MarginContainer/HFlowContainer" unique_id=287803706 instance=ExtResource("5_pmyid")]
 unique_name_in_owner = true
