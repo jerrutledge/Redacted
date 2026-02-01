@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bll85ag2um7hl" path="res://scenes/game_scene/tutorial_manager.gd" id="4_w8c7f"]
 [ext_resource type="PackedScene" uid="uid://ckymxmnq6px36" path="res://scenes/game_scene/letter_area.tscn" id="5_c6hhn"]
 
-[node name="Level2" type="Control" unique_id=2012722291]
+[node name="Level3" type="Control" unique_id=2012722291]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
