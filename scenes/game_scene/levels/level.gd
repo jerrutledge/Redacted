@@ -67,4 +67,4 @@ func _on_timer_timeout() -> void:
 	if level_time <= 0:
 		level_time = 0
 		$Timer.stop()
-		level_lost.emit()  # End the level when time runs out
+		level_won.emit(next_level_path)  # End the level when time runs out
