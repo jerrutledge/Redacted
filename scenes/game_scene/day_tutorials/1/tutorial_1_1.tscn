@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cfl2xcftnwe1s" path="res://assets/images/red-phone.png" id="2_v3xs4"]
 
 [node name="OverlaidWindow" unique_id=10089369 instance=ExtResource("1_3n8se")]
+process_mode = 3
 custom_minimum_size = Vector2(420, 200)
+pauses_game = true
 window_icon = ExtResource("2_v3xs4")
 update_content = true
 text = "Good morning, agent! Are you ready for another day of protecting the sanctity of the timeline?
@@ -16,6 +18,10 @@ title_font_size = 20
 
 [node name="TitleLabel" parent="ContentContainer/BoxContainer/TitleMargin/BoxContainer/HBoxContainer" parent_id_path=PackedInt32Array(99052811) index="0" unique_id=395043274]
 theme_override_font_sizes/font_size = 20
+
+[node name="WindowIcon" parent="ContentContainer/BoxContainer/TitleMargin/BoxContainer/HBoxContainer" parent_id_path=PackedInt32Array(99052811) index="1" unique_id=93368398]
+visible = true
+texture = ExtResource("2_v3xs4")
 
 [node name="DescriptionLabel" parent="ContentContainer/BoxContainer/BodyMargin" parent_id_path=PackedInt32Array(852282887) index="0" unique_id=1799666870]
 text = "Good morning, agent! Are you ready for another day of protecting the sanctity of the timeline?
