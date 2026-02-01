@@ -4,31 +4,44 @@
 [ext_resource type="Texture2D" uid="uid://cfl2xcftnwe1s" path="res://assets/images/red-phone.png" id="2_cqr88"]
 
 [node name="OverlaidWindow" unique_id=10089369 instance=ExtResource("1_3gqsc")]
+process_mode = 3
 custom_minimum_size = Vector2(420, 200)
+pauses_game = true
 window_icon = ExtResource("2_cqr88")
 update_content = true
-text = "Your job is to review the A.N.C.H.O.R. letters. That’s Authorized Narrative for Chronological Home Orientation and Retention. The big brains in research found that our field agents, after jet-setting all throughout history, needed to “maintain emotional ties” to their time of origin so that their brains didn’t turn all soupy. 
+text = "Good morning, agent! Are you ready for another day of protecting the sanctity of the timeline?
+
+Since it’s your first day at the Management Agency for Spacetime Kernels - M.A.S.K., as we like to call it - I’m here to train you. But after that, you’re on your own, kapeesh?.
+
+Your job is to review the A.N.C.H.O.R. letters. That’s Authorized Narrative for Chronological Home Orientation and Retention—letters sent from a future decade to a past decade. The big brains in research found that our field agents, after jet-setting all throughout history, needed to “maintain emotional ties” to their time of origin so that their brains didn’t turn all soupy. 
 
 However, you must [b]remove any information that could break the timeline[/b] by censoring it with black ink. Each day, you will be provided with guidelines for what has to be removed. 
 
-When you're done, press the SEND button."
+When you're done, press the SEND button.
+"
 close_button_text = "Understood"
-title = "Management"
+title = "Manager"
 title_font_size = 20
 
 [node name="TitleLabel" parent="ContentContainer/BoxContainer/TitleMargin/BoxContainer/HBoxContainer" parent_id_path=PackedInt32Array(99052811) index="0" unique_id=395043274]
 theme_override_font_sizes/font_size = 20
+text = "Manager"
 
 [node name="WindowIcon" parent="ContentContainer/BoxContainer/TitleMargin/BoxContainer/HBoxContainer" parent_id_path=PackedInt32Array(99052811) index="1" unique_id=93368398]
 visible = true
 texture = ExtResource("2_cqr88")
 
 [node name="DescriptionLabel" parent="ContentContainer/BoxContainer/BodyMargin" parent_id_path=PackedInt32Array(852282887) index="0" unique_id=1799666870]
-text = "Your job is to review the A.N.C.H.O.R. letters. That’s Authorized Narrative for Chronological Home Orientation and Retention. The big brains in research found that our field agents, after jet-setting all throughout history, needed to “maintain emotional ties” to their time of origin so that their brains didn’t turn all soupy. 
+text = "Good morning, agent! Are you ready for another day of protecting the sanctity of the timeline?
+
+Since it’s your first day at the Management Agency for Spacetime Kernels - M.A.S.K., as we like to call it - I’m here to train you. But after that, you’re on your own, kapeesh?.
+
+Your job is to review the A.N.C.H.O.R. letters. That’s Authorized Narrative for Chronological Home Orientation and Retention—letters sent from a future decade to a past decade. The big brains in research found that our field agents, after jet-setting all throughout history, needed to “maintain emotional ties” to their time of origin so that their brains didn’t turn all soupy. 
 
 However, you must [b]remove any information that could break the timeline[/b] by censoring it with black ink. Each day, you will be provided with guidelines for what has to be removed. 
 
-When you're done, press the SEND button."
+When you're done, press the SEND button.
+"
 
 [node name="CloseButton" parent="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons" parent_id_path=PackedInt32Array(702067329) index="0" unique_id=1696554714]
 text = "Understood"
