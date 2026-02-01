@@ -51,10 +51,11 @@ func _on_submit_pressed() -> void:
 		button_state = "submit"
 
 func set_score(score_object:Array[int] = [0,0,0]):
-	var new_text = "Correct Masking: %d\nIncorrect Masking: %d\nMissed: %d" % [score_object[0], score_object[1], score_object[2]]
-	%Score.set_text(new_text)
-	level_state.score = score_object
+	for i in range(3):
+		level_state.score[i] += score_object[i]
 	GlobalState.save()
+	var new_text = "Correct Masking: %d\nIncorrect Masking: %d\nMissed: %d" % [level_state.score[0], level_state.score[1], level_state.score[2]]
+	%Score.set_text(new_text)
 
 func _on_timer_timeout() -> void:
 	level_time -= 1  # Decrement instead of increment
