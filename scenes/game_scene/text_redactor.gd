@@ -11,7 +11,7 @@ func _ready() -> void:
 	bbcode_enabled = true
 	selection_enabled = true
 	scroll_active = true
-	remove_markings()
+	text = "" # We will depend on a call to set_letter_text to
 
 func set_letter_text(new_text):
 	censored = []
@@ -50,22 +50,6 @@ func remove_markings():
 			i += 1
 		if (i >= text.length()):
 			break
-		
-	#while text.contains("<") and text.contains(">"):
-#		var sel = Vector2i(text.find("<"), text.find(">") - 2)#
-	#	var newtext = text.substr(0, sel.x)
-#		newtext += text.substr(sel.x + 1, sel.y - sel.x+1)#
-#		newtext += text.substr(sel.y + 3)
-#		text = newtext
-#		must_mask.append(sel)
-#	while text.contains("{") and text.contains("}"):
-#		var sel = Vector2i(text.find("{"), text.find("}") - 2)
-#		var newtext = text.substr(0, sel.x)
-#		newtext += text.substr(sel.x + 1, sel.y - sel.x+1)
-#		newtext += text.substr(sel.y + 3)
-#		text = newtext
-#		ok_to_mask.append(sel)
-	
 
 var last_text:String = ""
 func _process(_delta: float) -> void:
