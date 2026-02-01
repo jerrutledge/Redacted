@@ -44,7 +44,7 @@ layout_mode = 2
 theme_override_constants/h_separation = 48
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HFlowContainer" unique_id=1323564316]
-custom_minimum_size = Vector2(215, 215)
+custom_minimum_size = Vector2(215, 800)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -64,9 +64,30 @@ grow_vertical = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HFlowContainer/TextureRect/MarginContainer" unique_id=1604754526]
 layout_mode = 2
 bbcode_enabled = true
-text = "Select text, and press [space] to redact.
+text = "[b]Guidelines:[/b]
 
- - Management"
+[b]Letters : 2060s => 1960s[/b]
+
+Mask all mention of [b]inventions[/b] created after [b]1969[/b]. A list of examples has been provided below:
+[list]
+-Pocket Calculator
+-TETRIS
+-Flying cars
+[/list]
+
+Mask anything that may [b]influence major events[b]. Some topical keywords to spot listed below:
+[list]
+-Murder/Kill/Death
+-Investment
+-Marriage/Wedding
+-Break-up/Separation
+-Accident
+-Illness
+-Revolution/Coup/Treason
+-Birth
+[/list]
+Happy masking! - Management
+"
 
 [node name="LetterArea" parent="MarginContainer/HFlowContainer" unique_id=287803706 instance=ExtResource("5_c6hhn")]
 unique_name_in_owner = true
