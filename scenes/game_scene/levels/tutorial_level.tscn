@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://c3j1b4dw6foko"]
+
+[ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_kifd8"]
+[ext_resource type="Texture2D" uid="uid://lvk5b4sukm6u" path="res://assets/images/brown-wooden-floor.jpg" id="2_lierk"]
+[ext_resource type="Theme" uid="uid://b6cow4vci2cht" path="res://resources/themes/paper_theme.tres" id="3_8w8gq"]
+[ext_resource type="Texture2D" uid="uid://cqbany3bsiunw" path="res://assets/images/paper-texture.jpg" id="4_td6ua"]
+[ext_resource type="PackedScene" uid="uid://ckymxmnq6px36" path="res://scenes/game_scene/letter_area.tscn" id="5_vnr1l"]
+[ext_resource type="Script" uid="uid://bll85ag2um7hl" path="res://scenes/game_scene/tutorial_manager.gd" id="6_10kyj"]
+
+[node name="Level1" type="Control" unique_id=2012722291]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kifd8")
+next_level_path = "uid://yvhvsxbglewu"
+
+[node name="BackgroundTexture" type="TextureRect" parent="." unique_id=1626174201]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lierk")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=540110946]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer" unique_id=1577329111]
+layout_mode = 2
+theme_override_constants/h_separation = 48
+
+[node name="ManagementNotes" type="VBoxContainer" parent="MarginContainer/HFlowContainer" unique_id=1793646061]
+custom_minimum_size = Vector2(0, 850)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HFlowContainer/ManagementNotes" unique_id=1323564316]
+custom_minimum_size = Vector2(215, 215)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("3_8w8gq")
+texture = ExtResource("4_td6ua")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HFlowContainer/ManagementNotes/TextureRect" unique_id=1447345645]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HFlowContainer/ManagementNotes/TextureRect/MarginContainer" unique_id=1604754526]
+layout_mode = 2
+bbcode_enabled = true
+text = "Select text, and press [space] to redact.
+
+ - Management"
+
+[node name="LevelText" type="TextureRect" parent="MarginContainer/HFlowContainer/ManagementNotes" unique_id=1943632887]
+custom_minimum_size = Vector2(215, 215)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("3_8w8gq")
+texture = ExtResource("4_td6ua")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HFlowContainer/ManagementNotes/LevelText" unique_id=13352045]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HFlowContainer/ManagementNotes/LevelText/MarginContainer" unique_id=495709777]
+layout_mode = 2
+bbcode_enabled = true
+text = "[u]GUIDELINES:[/u]
+
+Mask all mentions of [b]inventions[/b] created after [b]1900[/b]. A list of examples has been provided below:
+- television 
+- atomic bomb
+- microwaves 
+- personal computer
+
+Happy masking! - Management
+"
+
+[node name="LetterArea" parent="MarginContainer/HFlowContainer" unique_id=287803706 instance=ExtResource("5_vnr1l")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HFlowContainer" unique_id=1272164429]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="Timer" type="Control" parent="MarginContainer/HFlowContainer/VBoxContainer" unique_id=439757899]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="TimerLabel" type="Label" parent="MarginContainer/HFlowContainer/VBoxContainer/Timer" unique_id=838349470]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="RichTextLabel" parent="MarginContainer/HFlowContainer/VBoxContainer" unique_id=998549609]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Score: 0"
+
+[node name="ResetButton" type="Button" parent="MarginContainer/HFlowContainer/VBoxContainer" unique_id=1525562633]
+layout_mode = 2
+text = "Start Over"
+
+[node name="SubmitButton" type="Button" parent="MarginContainer/HFlowContainer/VBoxContainer" unique_id=416467963]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Submit Redactions"
+
+[node name="TutorialManager" type="Node" parent="." unique_id=1907361952]
+unique_name_in_owner = true
+script = ExtResource("6_10kyj")
+
+[node name="Timer" type="Timer" parent="." unique_id=56370868]
+
+[connection signal="pressed" from="MarginContainer/HFlowContainer/VBoxContainer/SubmitButton" to="." method="_on_submit_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
