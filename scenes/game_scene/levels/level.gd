@@ -36,16 +36,18 @@ func _on_tutorial_button_pressed() -> void:
 
 func _on_submit_pressed() -> void:
 	# TODO: do something with win/loss
+	var end_level
 	if button_state == "submit":
 		var scores = %LetterArea.evaluate_text()
 		set_score(scores)
 		button_state = "next"
 		%SubmitButton.text = "Next Level"
 	else:
-		%LetterArea.next_level()
+		end_level = %LetterArea.next_level()
+		if end_level:
+			level_won.emit(next_level_path)
 		%SubmitButton.text = "Submit Redactions"
 		button_state = "submit"
-		pass
 
 func set_score(score_object:Array[int] = [0,0,0]):
 	var new_text = "Correct Masking: %d\nIncorrect Masking: %d\nMissed: %d" % [score_object[0], score_object[1], score_object[2]]

@@ -31,9 +31,13 @@ func _ready() -> void:
 func evaluate_text() -> Array[int]:
 	return %LetterText.update_censoring(true)
 	
-func next_level():
+func next_level() -> bool:
+	var end_level = false
 	if current_index < len(letter_strings)-1:
 		current_index += 1
+	else:
+		end_level = true
 	%LetterText.set_letter_text(letter_strings[current_index])
 	%LetterText.update_censoring()
+	return end_level
 	
