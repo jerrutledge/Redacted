@@ -30,6 +30,7 @@ func _ready() -> void:
 	if not level_state.tutorial_read:
 		open_tutorials()
 	set_score(level_state.score)
+	%SubmitButton.text = "SEND"
 
 func _on_tutorial_button_pressed() -> void:
 	open_tutorials()
@@ -41,12 +42,12 @@ func _on_submit_pressed() -> void:
 		var scores = %LetterArea.evaluate_text()
 		set_score(scores)
 		button_state = "next"
-		%SubmitButton.text = "Next Level"
+		%SubmitButton.text = "NEXT"
 	else:
 		end_level = %LetterArea.next_level()
 		if end_level:
 			level_won.emit(next_level_path)
-		%SubmitButton.text = "Submit Redactions"
+		%SubmitButton.text = "SEND"
 		button_state = "submit"
 
 func set_score(score_object:Array[int] = [0,0,0]):
