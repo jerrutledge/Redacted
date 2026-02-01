@@ -115,5 +115,11 @@ script = ExtResource("6_so5mi")
 
 [node name="Timer" type="Timer" parent="." unique_id=56370868]
 
+[node name="Label" type="Label" parent="." unique_id=1375671742]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Level 3"
+
 [connection signal="pressed" from="MarginContainer/HFlowContainer/VBoxContainer/SubmitButton" to="." method="_on_submit_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bll85ag2um7hl" path="res://scenes/game_scene/tutorial_manager.gd" id="4_bsimd"]
 [ext_resource type="PackedScene" uid="uid://ckymxmnq6px36" path="res://scenes/game_scene/letter_area.tscn" id="5_pmyid"]
 
-[node name="Level2" type="Control" unique_id=2012722291]
+[node name="Level1" type="Control" unique_id=2012722291]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -137,6 +137,12 @@ unique_name_in_owner = true
 script = ExtResource("4_bsimd")
 
 [node name="Timer" type="Timer" parent="." unique_id=56370868]
+
+[node name="Label" type="Label" parent="." unique_id=2002854108]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Level 1"
 
 [connection signal="pressed" from="MarginContainer/HFlowContainer/VBoxContainer/SubmitButton" to="." method="_on_submit_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
