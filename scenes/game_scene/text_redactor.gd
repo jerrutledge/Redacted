@@ -22,20 +22,49 @@ func set_letter_text(new_text):
 	update_censoring()
 
 func remove_markings():
-	while text.contains("<") and text.contains(">"):
-		var sel = Vector2i(text.find("<"), text.find(">") - 2)
-		var newtext = text.substr(0, sel.x)
-		newtext += text.substr(sel.x + 1, sel.y - sel.x+1)
-		newtext += text.substr(sel.y + 3)
-		text = newtext
-		must_mask.append(sel)
-	while text.contains("{") and text.contains("}"):
-		var sel = Vector2i(text.find("{"), text.find("}") - 2)
-		var newtext = text.substr(0, sel.x)
-		newtext += text.substr(sel.x + 1, sel.y - sel.x+1)
-		newtext += text.substr(sel.y + 3)
-		text = newtext
-		ok_to_mask.append(sel)
+	var i = 0
+	var start_idx
+	var end_idx
+	while(true):
+		if (text[i] == '<' or text[i] == '{'):
+			start_idx = i
+			if text[start_idx] == '<':
+				while (text[i] != '>' and i < text.length()):
+					i += 1
+				end_idx = i
+				var newtext = text.substr(0, start_idx)
+				newtext += text.substr(start_idx+1, end_idx-start_idx-1)
+				newtext += text.substr(end_idx+1)
+				text = newtext
+				must_mask.append(Vector2i(start_idx, end_idx-2))
+			elif text[start_idx] == '{':
+				while (text[i] != '}' and i < text.length()):
+					i += 1
+				end_idx = i
+				var newtext = text.substr(0, start_idx)
+				newtext += text.substr(start_idx+1, end_idx-start_idx-1)
+				newtext += text.substr(end_idx+1)
+				text = newtext
+				ok_to_mask.append(Vector2i(start_idx, end_idx-2))
+		else:
+			i += 1
+		if (i >= text.length()):
+			break
+		
+	#while text.contains("<") and text.contains(">"):
+#		var sel = Vector2i(text.find("<"), text.find(">") - 2)#
+	#	var newtext = text.substr(0, sel.x)
+#		newtext += text.substr(sel.x + 1, sel.y - sel.x+1)#
+#		newtext += text.substr(sel.y + 3)
+#		text = newtext
+#		must_mask.append(sel)
+#	while text.contains("{") and text.contains("}"):
+#		var sel = Vector2i(text.find("{"), text.find("}") - 2)
+#		var newtext = text.substr(0, sel.x)
+#		newtext += text.substr(sel.x + 1, sel.y - sel.x+1)
+#		newtext += text.substr(sel.y + 3)
+#		text = newtext
+#		ok_to_mask.append(sel)
 	
 
 var last_text:String = ""

@@ -1,6 +1,6 @@
 Edgar,
 
-You are a loathsome, self-absorbed, thoroughly repugnant creature, possessed of less emotional depth than a flea clinging to a diseased rat. The sole comfort I derive from the misfortune of knowing you, you wretched and festering cabbage, is the certainty of your inevitable end—and my exquisite satisfaction in foreseeing it. My heart blossoms whenever I imagine the moment fate delivers you <to the rails before that oncoming train.> I confess, I would have relished the honour of hastening that appointment myself, yet <destiny has reserved that task for another, braver soul.>
+You are a loathsome, self-absorbed, thoroughly repugnant creature, possessed of less emotional depth than a flea clinging to a diseased rat. The sole comfort I derive from the misfortune of knowing you, you wretched and festering cabbage, is the certainty of your inevitable end—and my exquisite satisfaction in foreseeing it. My heart blossoms whenever I imagine the moment fate delivers you to the <rails> before that oncoming <train>. I confess, I would have relished the honour of hastening that appointment myself, yet destiny has reserved that task for another, braver soul.
 
 Do take care where you step,
 Your friend, Oliver

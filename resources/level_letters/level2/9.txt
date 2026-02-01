@@ -1,8 +1,11 @@
 Dear Liliana, 
 
-Thought I’d take a moment while waiting for the <SuperChute> to write to you. The station is quiet, the rain pattering gently on the <outer rim>. 
+Thought I’d take a moment while waiting for the <SuperChute> to write to you. The station is quiet, the rain pattering gently on the {outer rim}. 
 
-I want you to know that I saw your son—yes, you’ll have a son. I’m telling you this because I know you’ve been feeling blue about that aspect of your life. He seemed happy and fulfilled. He has your nose. The only thing is, I’m sorry to say, he’s an anti-revolutionary. <You might want to do something about that>. 
+I want you to know that I saw {your} <son> — yes, {you’re going to have a} <son>. I know you’ve been feeling blue about that aspect of your life. {He seems happy. Fulfilled. He has your nose.} 
+
+The only thing is, I’m sorry to say, {he’s anti-revolutionary.You’d better} <fix that behavior> {before he becomes a problem.}
+
 
 Hope this can make up for my absence in some small way. 
 

@@ -4,7 +4,7 @@ As a literary-minded creature, I thought you might be amused by a few modern wor
 
 <‘Cool’> — Nothing to do with temperature, you may be surprised to learn. It means ‘fashionable’, how quaint!
 
-<‘Hang out’> — On the line? Nae, my dear sister, this one means ‘to spend time together’. I anticipate our ‘hanging out’, on my return.
+<‘Hang out’> — On the line? Nae, my dear sister, this one means ‘to spend time together’. I anticipate our <‘hanging out’>, on my return.
 
 <‘Celebrity’> — A person of widespread reputation. I quite fancy becoming one myself.
 
