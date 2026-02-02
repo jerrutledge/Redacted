@@ -6,12 +6,13 @@ var current_index = starting_index
 var letter_strings: Array[String] = []
 
 func _ready() -> void:
-	print("ASDASDSADASDA")
 	var path:String = "res://resources/level_letters/"+level_folder_name
 	
+	print(path)
 	var dir = DirAccess.open(path)
+	print("Successfully accessed: " + path)
 	if dir:
-		print("Opened folder+ "+path)
+		print("Opened folder: "+path)
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		var file
@@ -20,8 +21,9 @@ func _ready() -> void:
 			letter_strings.append(file.get_as_text())
 			print("found file name: "+file_name)
 			file_name = dir.get_next()
-		var a = 1
+		print("Finished accessing files. Final count: " + str(len(letter_strings)))
 	else:
+		print("Letters directory not found!!")
 		return
 	
 	
