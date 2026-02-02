@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://yvhvsxbglewu"]
+[gd_scene format=3 uid="uid://danrqx83o0lal"]
 
 [ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_rgywr"]
 [ext_resource type="Texture2D" uid="uid://lvk5b4sukm6u" path="res://assets/images/brown-wooden-floor.jpg" id="2_8s04l"]
@@ -136,12 +136,6 @@ unique_name_in_owner = true
 script = ExtResource("4_w8c7f")
 
 [node name="Timer" type="Timer" parent="." unique_id=56370868]
-
-[node name="Label" type="Label" parent="." unique_id=1362829440]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Level 2"
 
 [connection signal="pressed" from="MarginContainer/HFlowContainer/VBoxContainer/SubmitButton" to="." method="_on_submit_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
