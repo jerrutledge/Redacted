@@ -8,7 +8,6 @@ process_mode = 3
 custom_minimum_size = Vector2(420, 200)
 pauses_game = true
 window_icon = ExtResource("2_v3xs4")
-update_content = true
 text = "Good morning, agent! Are you ready for another day of protecting the sanctity of the timeline?
 
 Since it’s your first day at the Management Agency for Spacetime Kernels - M.A.S.K., as we like to call it - I’m here to train you. But after that, you’re on your own, kapeesh?."
