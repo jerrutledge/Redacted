@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cqbany3bsiunw" path="res://assets/images/paper-texture.jpg" id="4_32y40"]
 [ext_resource type="PackedScene" uid="uid://ckymxmnq6px36" path="res://scenes/game_scene/letter_area.tscn" id="5_y7sfu"]
 [ext_resource type="Script" uid="uid://bll85ag2um7hl" path="res://scenes/game_scene/tutorial_manager.gd" id="6_so5mi"]
+[ext_resource type="AudioStream" uid="uid://cx23d3ug1h7aa" path="res://assets/audio/freesound_community-office-ambience-24734.mp3" id="7_4popk"]
 
 [node name="Level3" type="Control" unique_id=2012722291]
 layout_mode = 3
@@ -114,6 +115,11 @@ unique_name_in_owner = true
 script = ExtResource("6_so5mi")
 
 [node name="Timer" type="Timer" parent="." unique_id=56370868]
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=182790999]
+stream = ExtResource("7_4popk")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="MarginContainer/HFlowContainer/VBoxContainer/SubmitButton" to="." method="_on_submit_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

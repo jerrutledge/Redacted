@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ckymxmnq6px36" path="res://scenes/game_scene/letter_area.tscn" id="5_vnr1l"]
 [ext_resource type="Script" uid="uid://bll85ag2um7hl" path="res://scenes/game_scene/tutorial_manager.gd" id="6_10kyj"]
 [ext_resource type="PackedScene" uid="uid://yruhb6capt3g" path="res://scenes/game_scene/day_tutorials/1/tutorial_1_2.tscn" id="7_lierk"]
+[ext_resource type="AudioStream" uid="uid://cx23d3ug1h7aa" path="res://assets/audio/freesound_community-office-ambience-24734.mp3" id="8_8w8gq"]
 
 [node name="Level1" type="Control" unique_id=2012722291]
 layout_mode = 3
@@ -162,6 +163,11 @@ script = ExtResource("6_10kyj")
 tutorial_scenes = Array[PackedScene]([ExtResource("7_lierk")])
 
 [node name="Timer" type="Timer" parent="." unique_id=56370868]
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1994000561]
+stream = ExtResource("8_8w8gq")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="MarginContainer/HFlowContainer/VBoxContainer/SubmitButton" to="." method="_on_submit_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
